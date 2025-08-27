@@ -1,0 +1,217 @@
+\documentclass[]{mangos-musings}
+\usepackage[dvipsnames]{xcolor}
+\allowdisplaybreaks
+\usepackage{array}
+\usepackage{multicol}
+\begin{document}
+\title{21-259 Recitations \hfill \small{tylery}}
+\tableofcontents
+
+\newpage
+\section{08-26-2025}
+\subsection{Basics}
+This class is \textbf{Calculus in Three Dimensions}, thus the class will require you to think in 3-D.
+\begin{itemize}
+  \item Get used to drawing in 3-D. 
+  \\ My preference is to draw the usual vertical and horizontal axes. 
+  \\ Label the horizontal axis $y$ and the vertical axis $z$. 
+  \\ Then draw a diagonal from the bottom left to the top right, passing through the origin. Label this axis $x$.
+  Note that you can interchange any of the axis labels as necessary (which will come in handy when we start doing 3-D integration). 
+  \item In $\R^3$, the (Euclidean) distance (also referred to as the $L_2$ norm) between any two points $(x_1, y_1, z_1)$ and $(x_2, y_2, z_2)$
+  is given by the formula 
+  \[d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + (z_2 - z_1)^2}\]
+\end{itemize}
+\subsection{Planes and Spheres}
+In this course, you will often deal with planes and spheres (e.g., spherical coordinates). 
+\begin{itemize}
+  \item You will learn the canonical formula for a plane later (finding it involves cross products). For now, we will find equations for planes parallel to another plane.
+  \item[Ex.] Write an equation of the plane passing through point $(21, 2, 59)$ that is parallel to the $xz$-plane.
+  \subitem When a plane is parallel to the $xz$-plane, it means only the $x$ and $z$ coordinates may vary. 
+  \subitem Thus taking the $y$-value, we get the equation $y = 2$.
+  \item[Ex.] Write an equation of the plane passing through points $(2, 125, 9), (21, 25, 9), (5, 7, 9)$ that is parallel to the $xy$-plane. 
+  \subitem When a plane is parallel to the xy-plane, it means only the x and y coordinates may vary. 
+  \subitem Conveniently, the $z$-value in all 3 coordinates are equal; we get the equation $z = 9$.
+  \item A sphere is the set of all points in space equidistant from a fixed point, the center of
+  the sphere. For center $(a, b, c)$ and radius $r$, we represent the sphere by the (``canonical'') equation: 
+  \[(x-a)^2 + (y-b)^2 + (z-c)^2 = r^2\]
+  \item[Ex.] Find the equation of the sphere with diameter $\overline{PQ}$ where $P = (2, -1, -3)$ and $Q = (-2, 5, -1)$.
+  \subitem First, find the center, which is at the midpoint of the diameter $\overline{PQ}$:
+  \[C = \left(\dfrac{2 + (-2)}{2}, \dfrac{-1 + 5}{2}, \dfrac{-3 + (-1)}{2}\right) = \left(0, 2, -2\right)\]
+  \subitem Next, find the radius using the distance formula (half the length of the diameter)
+  \[r = \dfrac{1}{2}\norm{\overline{PQ}} 
+      = \dfrac{1}{2}\sqrt{(-2 - 2)^2 + (5 - (-1))^2 + (-1 - (-3))^2}
+      = \dfrac{1}{2}\sqrt{56}
+      = \sqrt{\dfrac{56}{4}}
+      = \sqrt{14}\]
+  \subitem Thus the sphere is given by $x^2 + (y-2)^2 + (z+2)^2 = 14$
+\end{itemize}
+\subsection{Vector Notation}
+Vectors are quantities with magnitude and direction. In $\R^3$, the standard unit vectors are 
+\[\hat{i} = \langle1, 0, 0\rangle \quad \hat{j} = \langle0, 1, 0\rangle \quad \hat{k} = \langle0, 0, 1\rangle \]
+You may also see these as $\hat{\mathbf{i}}, \hat{\mathbf{j}}, \hat{\mathbf{k}}$ in future coursework. 
+
+There are several notations. Fix points in $\R^3$ $P = (0, 2, 1)$ and $Q = (2, 5, 9)$
+\\ Let's represent the vector $\overrightarrow{PQ} = \langle x_Q - x_P, y_Q - y_P, z_Q - z_P\rangle$.
+\begin{itemize}
+  \item Component Form: $\overrightarrow{PQ} = \langle 2-0, 5-2, 9-1\rangle = \langle 2, 3, 8\rangle$
+  \item Using the unit vectors: $\overrightarrow{PQ} = 2\hat{i} + 3\hat{j} + 8\hat{k}$
+\end{itemize}
+
+Ex: Consider the vectors $v = \langle 0, 2, 1\rangle$ and $u = \langle 2, 5, 9\rangle$. Find a unit vector in the direction of $3v + u$. 
+
+You will need the following rules (taken from your textbook)
+\\ \includegraphics{assets/rec01-vectorspace.png}
+
+Solution: first find $3v + u$, then find unit vector in that direction.
+\begin{align*}
+  3v + u &= \langle 3(0), 3(2), 3(1)\rangle + \langle 2, 5, 9\rangle \tag{scalar multiplication}
+  \\ &=  \langle 0, 6, 3\rangle +  \langle 2, 5, 9\rangle 
+  = \langle 2, 11, 12\rangle
+  \\ \dfrac{1}{\norm{3v + u}} (3v + u) &= \dfrac{\langle 2, 11, 12\rangle}{\sqrt{2^2 + 11^2 + 12^2}} =  \langle \dfrac{2}{\sqrt{269}}, \dfrac{11}{\sqrt{269}}, \dfrac{12}{269}\rangle \tag{unit vector in direction}
+\end{align*}
+Observe that $269$ is prime, so you can't simplify the denominator. Thus we're done. Not all numbers will be pretty, but as a tip: make sure your answers are feasible. If you are taking the length of a vector with 1-digit coordinates and get a 5-digit number, that's probably wrong. 
+\\ \textbf{DON'T FORGET THE SQUARE ROOT $\sqrt{}$ when taking norms!!!!}
+
+\newpage
+\subsection{Computing 3x3 Determinants}
+Useful for computing cross products. You are free to use whatever trick you want so long as you show your work. (note vertical bars means determinant, while square brackets mean matrix). 
+
+\subsubsection{Cofactor Method}
+Key notes: $+, -, +$ (\textbf{DON'T FORGET THE MIDDLE IS NEGATIVE}) and the 2x2 sub-determinants are the elements not in the same row or column.
+\begin{align*}
+  \begin{vmatrix}
+    a & b & c \\
+    d & e & f \\ 
+    g & h & i
+  \end{vmatrix}
+  &= a \begin{vmatrix}
+    e & f \\ 
+    h & i
+  \end{vmatrix}
+  - b \begin{vmatrix}
+    d & f \\ 
+    g & i
+  \end{vmatrix}
+  + c \begin{vmatrix}
+    d & e \\ 
+    g & h
+  \end{vmatrix}
+  = a(ei - fh) - b(di - fg) + c(dh - eg)
+  \\ &= aei - afg - bdi + bfg + cdh - ceg
+\end{align*}
+For cross products between two vectors $u = \langle u_x, u_y, u_z \rangle$ and $v = \langle v_x, v_y, v_z \rangle$, you just compute the 3x3 determinant $\begin{vmatrix}
+  \hat{i} & \hat{j} & \hat{k} \\ 
+  u_x & u_y & u_z \\ 
+  v_x & v_y & v_z
+\end{vmatrix}$
+
+\subsubsection{Diagonal Method}
+Recall that the 2x2 determinant is computed using the diagonals:
+$\begin{vmatrix}
+    a & b \\
+    c & d 
+\end{vmatrix} = ad - bc$, where the diagonals going from right to left are positive and diagonals going from left to right are negative. We extend this idea to 3x3 determinants:
+\[\begin{vmatrix}
+    a & b & c \\
+    d & e & f \\ 
+    g & h & i
+  \end{vmatrix} \xRightarrow{expand} \begin{matrix}
+    & & a & b & c & & \\
+    & f & d & e & f & d & \\ 
+    h & i & g & h & i & g & h
+  \end{matrix} \xRightarrow{compute} aei + bfg + cdh - afh - bdi - ceg\]
+which is the same result as derived from the cofactor method.
+
+
+\newpage
+\section{08-28-2025}
+\textbf{Relevant Textbook Sections:} 2.3, 2.4
+
+\subsection{Checkpoint 2.23}
+
+\subsection{Checkpoint 2.24}
+
+\subsection{Checkpoint 2.27}
+
+\subsection{Checkpoint 2.33 (quick)}
+
+\subsection{Checkpoint 2.38}
+
+\subsection{Example 2.44}
+
+
+
+
+
+\newpage
+\section{09-02-2025}
+
+\newpage
+\section{09-04-2025}
+
+\newpage
+\section{09-09-2025}
+
+\newpage
+\section{09-11-2025}
+
+\newpage
+\section{09-16-2025}
+
+\newpage
+\section{09-18-2025}
+
+\newpage
+\section{09-23-2025}
+
+\newpage
+\section{09-25-2025}
+
+\newpage
+\section{09-30-2025}
+
+\newpage
+\section{10-02-2025}
+
+\newpage
+\section{10-07-2025}
+
+\newpage
+\section{10-09-2025}
+
+\newpage
+\section{10-21-2025}
+
+\newpage
+\section{10-23-2025}
+
+\newpage
+\section{10-28-2025}
+
+\newpage
+\section{10-30-2025}
+
+\newpage
+\section{11-06-2025}
+
+\newpage
+\section{11-11-2025}
+
+\newpage
+\section{11-13-2025}
+
+\newpage
+\section{11-18-2025}
+
+\newpage
+\section{11-20-2025}
+
+\newpage
+\section{11-25-2025}
+
+\newpage
+\section{12-02-2025}
+
+\newpage
+\section{12-04-2025}
+\end{document}
