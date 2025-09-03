@@ -269,53 +269,66 @@ Identify the surfaces represented by the given equations.
 \begin{enumerate}[label=(\alph*)]
   \item $16x^2 + 9y^2 + 16z^2 = 144$
   
- \begin{align*}
-    \\ \\ \\ \\
-  \end{align*}
+%  \begin{align*}
+%     \\ \\ \\ \\
+%   \end{align*}
 
-  % \textbf{Solution}
-  % Observe that all the terms are squared, and all the coefficients are positive (but not equal) so this is an ellipsoid.
-  % \begin{align*}
-  %   \\ \\
-  % \end{align*}
+  \textbf{Solution}
+  Observe that all the terms are squared, and all the coefficients are positive (but not equal) so this is an ellipsoid.
+  \begin{align*}
+    \\ \\
+  \end{align*}
   \item $9x^2 - 18x + 4y^2 + 16y - 36z + 25 = 0$
   
-  \begin{align*}
-    \\ \\ \\ \\
-  \end{align*}
-
-  % \textbf{Solution}
-  % We have two squared terms, and $z$ term of degree one. We could rearrange this to get $36z = 9x^2 - 18x + 4y^2 + 16y + 25$, which appears to be a elliptic paraboloid.
   % \begin{align*}
-  %   \\ \\ 
+  %   \\ \\ \\ \\
   % \end{align*}
+
+  \textbf{Solution}
+  We have two squared terms, and $z$ term of degree one. We could rearrange this to get $36z = 9x^2 - 18x + 4y^2 + 16y + 25$, which appears to be a elliptic paraboloid.
+  \begin{align*}
+    \\ \\ 
+  \end{align*}
 \end{enumerate}
 
 \subsection{Section 2.6, Checkpoint 2.54}
 Identify the surface represented by the equation $9x^2 + y^2 - z^2 + 2z - 10 = 0$.
 
- \begin{align*}
-    \\ \\ \\ \\
-  \end{align*}
-% \textbf{Solution} We have three squared terms, two positive coefficients and one negative coefficient. So this is a double cone.
-% \begin{align*}
-%   \\ \\
-% \end{align*}
+%  \begin{align*}
+%     \\ \\ \\ \\
+%   \end{align*}
+\textbf{Solution} We have three squared terms, two positive coefficients and one negative coefficient. So this is a double cone.
+\begin{align*}
+  \\ \\
+\end{align*}
 
 \subsection{Section 2.6, Exercise 350}
 Find the equation of the quadric surface with points $P(x,y,z)$ that are equidistant from point $Q(0,2,0)$ and plane of equation $y=-2$. Identify the surface. 
 
-% \textbf{Solution} To do this, we take the norm from the point $Q$ to the point $y = -2$, parameterized by $\mathbf{r}(t) = (t, -2, t)$. The distance is thus $\sqrt{(t - 0)^2 + (-2 - 2)^2 + (t - 0)^2} = \sqrt{2t^2 + 4}$
+\textbf{Solution} First, the distance from a point $(x, y, z)$ to the plane $y = -2$ is just $\abs{y}$. \textit{This is because the plane $y = -2$ has normal vector $\hat{j}$; projecting $\overrightarrow{PQ}$ onto $\hat{j}$ just yields the $y$ component.}
 
+To do this, we want $\langle x, y, z \rangle$ that satisfies
+\begin{align*}
+  \sqrt{(x-0)^2 + (y-2)^2 + (z-0)^2} &= y - (-2) 
+  \\ \sqrt{x^2 + (y-2)^2 + z^2} &= y + 2
+  \\ x^2 + (y-2)^2 + z^2 &= (y+2)^2
+  \\ x^2 + y^2 - 4y + 4 + z^2 &= y^2 + 4y + 4
+  \\ x^2 + z^2 &= 8y
+\end{align*}
+This is the form of an elliptic paraboloid.
 
 \newpage
 \section{09-09-2025}
 \subsection{Section 3.1, Exercise 8}
 Find the limit of the following vector valued function at the indicated value of $t$.
 \[\lim_{t\to 4}\left\langle \sqrt{t-3}, \dfrac{\sqrt{t} - 2}{t-4}, \tan\left(\dfrac{\pi}{t}\right)\right\rangle\]
-\begin{align*}
-  \\ \\ \\ \\
-\end{align*}
+\textbf{Solution} We can just substitute for the $x$ and $z$ components. The middle one requires more thought; direct substitution gives $\frac{0}{0}$, so we apply L'Hopital's rule.
+\[\lim_{t\to 4} \dfrac{\sqrt{t}-2}{t-4} = \lim_{t\to 4} \dfrac{\frac{1}{2\sqrt{t}}}{1} = \dfrac{1}{4}\]
+So the limit is 
+\[\left\langle1, \dfrac{1}{4}, 1\right\rangle\]
+% \begin{align*}
+%   \\ \\ \\ \\
+% \end{align*}
 
 \subsection{Section 3.1, Exercise 22}
 Eliminate the parameter $t$, write the equation in Cartesian coordinates, then sketch the graphs of the vector-valued functions. \textit{Hint: solve first equation for $x$ in terms of $t$ and substitute this result into the second equation}.
