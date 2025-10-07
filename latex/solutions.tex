@@ -276,23 +276,29 @@ Maximize $U(x, y) = 8x^{\frac{4}{5}} y^{\frac{1}{5}}$ under constraint $4x + 2y 
 \begin{align*}
   4x + 2y = 12 & \implies 2x + y = 6
   \\ & \implies y = 6 - 2x 
-  \\ & \implies U(x) = 8x^{4/5}\cdot (6 - 2x)
+  \\ & \implies U(x) = 8x^{4/5}\cdot (6 - 2x)^{1/5}
 \end{align*}
 Now we maximize using calc 1 techniques:
 \begin{align*}
-  \frac{dU}{dx} &= 8 \cdot\left( \frac{4}{5}x^{-1/5} \cdot (6 - 2x) + (-2)\cdot 8x^{4/5}\right) = 0
-  \\ &\implies \frac{4}{5}x^{-1/5} \cdot (6 - 2x) + (-2)\cdot 8x^{4/5} = 0
-  \\ &\implies 16x^{4/5} = \frac{24}{5}x^{-1/5} - \frac{8}{5}x^{4/5}
-  \\ &\implies \frac{72}{5}x^{4/5} = \frac{24}{5}x^{-1/5}
-  \\ &\implies 3x^{4/5} = x^{-1/5}
-  \\ &\implies 3x = 1 \implies x = \frac{1}{3} \implies y = 6 - 2x = \frac{16}{3}
+  \frac{dU}{dx} &= 8 \cdot\left( \frac{4}{5}x^{-1/5} \cdot (6 - 2x)^{1/5} + (-2)\cdot\frac{1}{5}\cdot(6-2x)^{-4/5}\cdot x^{4/5}\right) = 0
+  \\ &\implies \frac{4}{5}x^{-1/5} \cdot (6 - 2x)^{1/5} + (-2)\cdot\frac{1}{5}\cdot(6-2x)^{-4/5}\cdot x^{4/5} = 0
+  \\ &\implies \frac{4}{5}x^{-1/5} \cdot (6 - 2x)^{1/5}  = \frac{2}{5}\cdot (6-2x)^{-4/5}\cdot x^{4/5}
+  \\ &\implies 4\cdot(6-2x)^{1/5} = 2\cdot(6-2x)^{-4/5}\cdot x
+  \\ &\implies 6-2x = \frac{x}{2}
+  \\ &\implies 6 = \frac{5x}{2}
+  \\ &\implies x = \frac{12}{5} \implies y = 6 - 2\cdot \frac{12}{5} = \frac{6}{5}
 \end{align*}
-Now is this is a max or min?
+Now is this is a max or min? We find the hessian of $U$:
 \begin{align*}
-  \frac{dU}{dx} &= \frac{32}{5}x^{-1/5} \cdot (6 - 2x) -16\cdot 8x^{4/5} = \frac{192}{5}x^{-1/5} - \frac{64}{5}x^{4/5} - 128 x^{4/5} = \frac{192}{5}x^{-1/5} - \frac{704}{5}x^{4/5}
-  \\ \frac{d^2U}{dx^2} &= -\frac{192}{25}x^{-6/5} - \frac{2816}{25}x^{-1/5}
+  U_x &= \frac{32}{5}\cdot x^{-1/5}\cdot y^{1/5}\\
+  U_y &= \frac{8}{5}\cdot x^{4/5}\cdot y^{-4/5}\\
+  U_{xx} &= -\frac{32}{5}\cdot x^{-6/5}\cdot y^{1/5}\\ 
+  U_{yy} &= -\frac{32}{5}\cdot x^{4/5}\cdot y^{-9/5}\\ 
+  U_{xy} &= \frac{32}{25}\cdot x^{-1/5}\cdot y^{-4/5}\\
+  U_{yx} &= \frac{32}{25}\cdot x^{-1/5}\cdot y^{-4/5} \tag{Clairaut's}
 \end{align*}
-If we evaluate the second derivative at $x =1/3, y = 16/3$, it's a little ugly, but we'll see that since $x$ is positive, $x^{-6/5}, x^{-1/5}$ are both positive, and notice the coefficients are both negative, so the overall second derivative is negative at the point we found. Therefore, $U\left(\frac{1}{3}, \frac{16}{3}\right)$ is a maximum, and we just plug in to find the value.
+You can evaluate the hessian, find the determinant, and realize that this point must be a maximum (determinant positive, upper left element negative). 
+Therefore, $U\left(\frac{12}{5}, \frac{6}{5}\right)$ is a maximum, and we just plug in to find the value.
 
 \newpage
 \subsection*{Section 4.8, Exercise 379}
