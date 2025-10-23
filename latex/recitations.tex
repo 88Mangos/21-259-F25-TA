@@ -652,7 +652,7 @@ Suppose that $f(x, y)$ is a function of two variables that is continuous over a 
   = \int_{c}^{d}\int_{a}^{b} f(x,y)\ dx \ dy
 \]
 Generally, Fubini's holds if $f$ is bounded on $R$ and $f$ is discontinuous only on a finite number of continuous curves. In other words, $f$ has to be integrable over $R$. 
-\subsection{Checkpoint 5.2}
+\subsection{Section 5.1, Checkpoint 5.2}
 \begin{enumerate}[label=(\alph*)]
   \item Use the properties of the double integral and Fubini's theorem to evaluate the integral
   \[
@@ -674,7 +674,7 @@ Generally, Fubini's holds if $f$ is bounded on $R$ and $f$ is discontinuous only
 %
 %
 %
-\subsection{Checkpoint 5.5}
+\subsection{Section 5.1, Checkpoint 5.5}
 Find the volume of the solid bounded above by the graph of $f(x, y) = xy\sin (x^2 y)$ and below by the $xy$-plane on the rectangular region $R = [0,1]\times [0, \pi]$ 
 \begin{align*}
   \\ \\
@@ -683,7 +683,7 @@ Find the volume of the solid bounded above by the graph of $f(x, y) = xy\sin (x^
 %
 %
 %
-\subsection{Checkpoint 5.12}
+\subsection{Section 5.2, Checkpoint 5.12}
 % weird regions, integration
 Find the volume of the solid bounded above by $f(x, y) = 10 - 2x + y$ over the region enclosed by the curves $y = 0$ and $y = e^x$, where $x\in [0, 1]$.
 \begin{align*}
@@ -694,7 +694,7 @@ Find the volume of the solid bounded above by $f(x, y) = 10 - 2x + y$ over the r
 %
 %
 \newpage
-\subsection{Checkpoint 5.15}
+\subsection{Section 5.2, Checkpoint 5.15}
 Evaluate the improper integral 
 \[\iint_D \frac{y}{\sqrt{1 - x^2 - y^2}} \ dA \]
 where $D = \{(x, y) : x\ge 0, y \ge 0, x^2 + y^2 \le 1\}$
@@ -727,7 +727,7 @@ See the textbook, Type I vs Type II region problem.
 Remember that when we convert to polar, our Jacobian (coming soon) is $r$. So 
 \[\iint_{R}f(x, y)\ dx \ dy = \iint_R f(r,\theta) r \ dr \ d\theta\]
 
-\subsection{Checkpoint 5.17}
+\subsection{Section 5.3, heckpoint 5.17}
 Sketch the region $R=\{(r,\theta) : r\in[1,2], \theta\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]\}$
 \begin{align*}
   \\ \\
@@ -736,7 +736,7 @@ Sketch the region $R=\{(r,\theta) : r\in[1,2], \theta\in\left[-\frac{\pi}{2},\fr
 %
 %
 %
-\subsection{Checkpoint 5.20}
+\subsection{Section 5.3, Checkpoint 5.20}
 Use polar coordinates to find an iterated integral for finding the volume of the solid enclosed by the paraboloids $z = x^2 + y^2$ and $z = 16 - x^2 - y^2$.
 \begin{align*}
   \\ \\
@@ -745,7 +745,7 @@ Use polar coordinates to find an iterated integral for finding the volume of the
 %
 %
 %
-\subsection{Checkpoint 5.21}
+\subsection{Section 5.3, Checkpoint 5.21}
 Find the area enclosed inside the cardioid $r = 3 - 3\sin \theta$ and outside the cardioid $r = 1 + \sin \theta$
 \begin{align*}
   \\ \\
@@ -754,7 +754,7 @@ Find the area enclosed inside the cardioid $r = 3 - 3\sin \theta$ and outside th
 %
 %
 %
-\subsection{Checkpoint 5.22}
+\subsection{Section 5.3, Checkpoint 5.22}
 Evaluate the integral 
 \[
   \iint_{\R^2} e^{-4\cdot (x^2 + y^2)} \ dx \ dy 
@@ -762,10 +762,153 @@ Evaluate the integral
 
 \newpage
 \section{10-28-2025}
+\subsection{Section 5.4, Exercise 212}
+Evaluate the triple integral over the bounded region $E = \{(x, y, z) : (x, y)\in D, u_1(x, y) \le z \le u_2 (x, y)\}$, where $D$ is the projection of $E$ onto the $xy$-plane.
 
+$E$ is the solid bounded by $y = \sqrt{x}$, $x = 4$, $y = 0$, $z = -2$, and $z = 1$ (see figure below).
+\[\includegraphics[scale=0.4]{assets/rec17-ex212.png}\]
+
+Evaluate $\iiint_E xyz \ dV$ (use $dx \ dy \ dz$).
+\begin{align*}
+  \\ \\
+\end{align*}
+%
+%
+%
+%
+\subsection{Section 5.5, Checkpoints 5.28}
+Consider the region $E$ inside the right circular cylinder with equation $r = 2 \sin \theta$, bounded below by the $r\theta$-plane and bounded above by $z = 4-y$. Set up a triple integral with a function $f(r,\theta, z)$ in cylindrical coordinates.
+\begin{align*}
+  \\ \\
+\end{align*}
+%
+%
+%
+%
+\subsection{Section 5.5, Checkpoints 5.31}
+Set up a triple integral for the volume of the solid region bounded above by the sphere $\rho = 2$ and bounded below by the cone $\phi = \frac{\pi}{3}$.
+\begin{align*}
+  \\ \\
+\end{align*}
+%
+%
+%
+%
+\newpage
+\subsection{Section 5.5, Example 5.50}
+\textit{the book does not draw a picture, but you should}
+Convert the following rectangle into cylindrical coordinates:
+\[\int_{y=-1}^{1}\int_{x=0}^{\sqrt{1-y^2}} \int_{z = x^2 + y^2}^{\sqrt{x^2 + y^2}} xyz \ dz \ dx \ dy \]
+\begin{align*}
+  \\ \\
+\end{align*}
+%
+%
+%
+%
+\subsection{Section 5.5, Checkpoint 5.32}
+\textit{cyl. and sph. only}
+Use cylindrical and spherical coordinates to set up triple integrals for finding the volume of the region inside the sphere $x^2 + y^2 + z^2 = 4$ but outside the cylinder $x^2 + y^2 = 1$.
+\[\includegraphics[scale=0.5]{assets/rec17-checkpt-5.32.png}\]
+\begin{align*}
+  \\ \\
+\end{align*}
+%
+%
+%
+%
 \newpage
 \section{10-30-2025}
-
+\subsection{Section 5.6, Exercise 301}
+\textit{computation to final answer left to you all :-)}
+In the following exercises, the region $R$ is the trapezoidal region determined by the lines $y = \frac{1}{4}x + \frac{5}{2}$, $y = 0$, $y = 2$, and $x = 0$. Find the mass of $R$ with the density function $\rho(x, y) = 3xy$.
+\[\includegraphics[scale=0.4]{assets/rec18-ex301.png}\]
+\begin{align*}
+  \\ \\
+\end{align*}
+%
+%
+%
+%
+\subsection{Section 5.6, Exercise 346}
+\textit{computation to final answer left to you all :-)}
+The solid $Q$ is bounded by the cylinder $x^2 + y^2 = a^2$, the paraboloid $b^2 - z = x^2 + y^2$, and the $xy$ plane, where $0 < a < b$. Find the mass of the solid if its density is given by $\rho (x, y, z) = \sqrt{x^2 + y^2}$.
+\begin{align*}
+  \\ \\
+\end{align*}
+%
+%
+%
+%
+\subsection{Section 5.6, Example 5.62}
+\textit{try different orders of integration - you should get same answer regardless}
+Suppose that $Q$ is a solid region bounded by $x + 2y + 3z = 6$ and the coordinate planes and has density $\rho (x, y, z) = x^2 yz$. Find the total mass. 
+\begin{align*}
+  \\ \\
+\end{align*}
+%
+%
+%
+%
+\subsection{Challenge: Section 5.6, Exercise 343}
+% must change to spherical coords,
+% then solve for n.
+The mass of a solid $Q$ is given by 
+\[\int_{0}^{2\sqrt{2}}\int_{0}^{\sqrt{8-x^2}}\int_{\sqrt{x^2 + y^2}}^{\sqrt{16 - x^2 - y^2}} \left(x^2 + y^2 + z^2 \right)^n \ dz \ dy \ dx\]
+where $n$ is an integer. Determine $n$ such that the mass of the solid is $(2 - \sqrt{2})\cdot \pi$.
+\newpage
+\section{11-04-2025}
+\[\includegraphics[scale=0.5]{assets/rec19-changeofvars.png}\]
+\subsection{Section 5.7, Exercise 359, 360}
+The given function $T : S \to R$, $T(u, v) = (x, y)$ on the region $S = \{(u, v) : 0 \le u \le 1, 0 \le v \le 1\}$ bounded by the unique square is given. $R\subset \R^2$ is the image of $S$ under $T$.
+\begin{enumerate}[label=(\alph*)]
+  \item Justify that $T$ is a $C^1$ transformation
+  \item Find the images of the vertices of the unit square $S$ through the function $T$ 
+  \item Determine the image $R$ of the unit square $S$ and graph it 
+  \item[359.] $ = 2u - v$, $y = u + 2v$
+  \item[360.] $ x = u^2$, $y = v^2$ 
+\end{enumerate}
+\begin{align*}
+  \\ \\
+\end{align*}
+%
+%
+%
+%
+\subsection{Section 5.7, Checkpoint 5.46}
+Make appropriate changes of variables in the integral 
+\[\iint_R \frac{4}{(x - y)^2} \ dy \ dx\]
+where $R$ is the trapezoid bounded by the lines $x - y = 2$, $x - y = 4$, $x = 0$, and $y = 0$. Write the resulting integral.
+\begin{align*}
+  \\ \\
+\end{align*}
+%
+%
+%
+%
+\newpage
+\subsection{Section 5.7, Checkpoint 5.47}
+Using the substitutions $x = v$, $y = \sqrt{u + v}$, evaluate the integral 
+\[\iint_R y \sin (y^2 - x) \ dA\]
+where $R$ is the region bounded by the lines $\sqrt{x}$, $x = 2$, and $y = 0$.
+\begin{align*}
+  \\ \\ \\ \\ \\ \\ \\ \\ 
+\end{align*}
+%
+%
+%
+%
+\subsection{Section 5.7, Checkpoint 5.48}
+Let $D$ be the region in $xyz$-space defined by $1 \le x \le 2$, $0 \le xy \le 2$, and $0 \le z \le 1$. Evaluate 
+\[\iiint_D (x^2y + 3xyz) \ dx \ dy \ dz\]
+by using the transformation $u = x$, $v = xy$, and $w = 3z$.
+\begin{align*}
+  \\ \\
+\end{align*}
+%
+%
+%
+%
 \newpage
 \section{11-06-2025}
 
